@@ -36,10 +36,7 @@ gulp.task('server', function (callback) {
     contentBase: './build',
     hot: true,
     debug: true
-  }).listen(process.env.PORT || 8000, 'localhost', function (err, result) {
-    console.log(err);
-    console.log(result);
-  });
+  }).listen(process.env.PORT || 8000);
 });
 
 gulp.task('watch', ['copy', 'sass'], function () {
