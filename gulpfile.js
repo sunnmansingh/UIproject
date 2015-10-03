@@ -28,7 +28,7 @@ gulp.task('sass', function () {
 
 gulp.task('server', function (callback) {
   var myConfig = require('./webpack.config.js');
-  
+
   var webpackCompiler = webpack(myConfig, function(err, stats) {
   });
 
@@ -36,8 +36,8 @@ gulp.task('server', function (callback) {
     contentBase: './build',
     hot: true,
     debug: true
-  }).listen(8000, 'localhost', function (err, result) {
-    
+  }).listen(process.env.PORT || 8000, 'localhost', function (err, result) {
+
   });
 });
 
