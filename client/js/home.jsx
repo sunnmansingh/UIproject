@@ -27,7 +27,7 @@ var Home = React.createClass({
         event.preventDefault();
         var self = this;
         var username = React.findDOMNode(self.refs.username).value;
-        var url = "https://api.github.com/users/"+username+"/repos";
+        var url = "http://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json";
         self.setState({
           state: 'aquiring data...',
           repos: self.state.repos
@@ -35,8 +35,8 @@ var Home = React.createClass({
         $.ajax(url).done(function(data){
           self.setState({
             state: 'idle',
-            repos: data.map(function(repo){
-              return (<li>{repo.name}</li>);
+            repos: data.response.artists.map(function(artist){
+              return (<li>{artist.name}</li>);
             })
           });
         });
