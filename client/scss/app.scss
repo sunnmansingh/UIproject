@@ -1,2 +1,9 @@
 @import "./settings";
 @import "foundation-apps/scss/foundation";
+
+blockquote {
+    padding: 0 0 0 16px;
+    margin: 0 0 30px;
+    border-left: 3px solid #16a085;
+    background-color: #e7e9ec;
+}
