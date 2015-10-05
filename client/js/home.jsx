@@ -13,7 +13,7 @@ var Home = React.createClass({
         event.preventDefault();
         var self = this;
         var username = React.findDOMNode(self.refs.username).value;
-        var url = "http://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json";
+        var url = "http://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json&name=" + username;
         self.setState({
           state: 'aquiring data...',
           repos: self.state.repos
@@ -40,7 +40,7 @@ var Home = React.createClass({
 
     var self = this;
     //var username = React.findDOMNode(self.refs.username).value;
-    var url = "http://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json";
+    var url = "http://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json" + username;
     self.setState({
       state: 'aquiring data...',
       repos: self.state.repos
@@ -57,17 +57,17 @@ var Home = React.createClass({
   },
   render: function() {
     return (
-      // <div className="grid-block">
-      //   <form onSubmit={this.onSubmit}>
-      //     <div className="form-group">
-      //       <input type="text" value="" placeholder="Inactive" className="form-control" />
-      //     </div>
-      //     <input type="text" placeholder="github username" ref="username" /> &nbsp;
-      //     <input type="submit" value="enter" className="btn btn-block btn-lg btn-primary" /> &nbsp;
-      //     <span>{this.state.state}</span>
-      //   </form>
+      <div className="grid-block">
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <input type="text" value="" placeholder="Inactive" className="form-control" />
+          </div>
+          <input type="text" placeholder="github username" ref="username" /> &nbsp;
+          <input type="submit" value="enter" className="btn btn-block btn-lg btn-primary" /> &nbsp;
+          <span>{this.state.state}</span>
+        </form>
         <ul>{this.state.repos}</ul>
-      // </div>
+       </div>
     );
   }
 });
