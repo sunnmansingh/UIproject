@@ -4,6 +4,8 @@ var {Route, DefaultRoute, RouteHandler, Link} = require('react-router');
 var Home = require('./home');
 var About = require('./about');
 
+
+
 var App = React.createClass({
   render: function () {
     return (
@@ -32,6 +34,8 @@ var routes = (
     <DefaultRoute handler={Home}/>
   </Route>
 );
+
+ //React.render(<App />, document.getElementById('app'));
 
 Router.run(routes, function (Handler) {
   React.render(<Handler />, document.body);
