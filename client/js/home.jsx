@@ -60,9 +60,9 @@ var Home = React.createClass({
       <div className="grid-block">
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <input type="text" value="" placeholder="Inactive" className="form-control" />
+            <input type="text" value="" placeholder="Status" className="form-control" />
           </div>
-          <input type="text" placeholder="github username" ref="username" /> &nbsp;
+          <input type="text" placeholder="artist name" ref="username" /> &nbsp;
           <input type="submit" value="enter" className="btn btn-block btn-lg btn-primary" /> &nbsp;
           <span>{this.state.state}</span>
         </form>
