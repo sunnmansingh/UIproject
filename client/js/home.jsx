@@ -13,7 +13,7 @@ var Home = React.createClass({
         event.preventDefault();
         var self = this;
         var username = React.findDOMNode(self.refs.username).value;
-        var url = "http://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json&name=" + username;
+        var url = "https://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json&name=" + username;
         self.setState({
           state: 'aquiring data...',
           repos: self.state.repos
@@ -40,7 +40,7 @@ var Home = React.createClass({
 
     var self = this;
     //var username = React.findDOMNode(self.refs.username).value;
-    var url = "http://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json" + username;
+    var url = "https://developer.echonest.com/api/v4/artist/search?api_key=BBG6HK62UBGI1PIZ3&format=json" + username;
     self.setState({
       state: 'aquiring data...',
       repos: self.state.repos
